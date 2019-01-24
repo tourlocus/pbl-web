@@ -1,0 +1,220 @@
+#header {
+  background: #ffbf7f;
+  padding: 6px 8px;
+}
+
+.header_main {
+  display: flex;
+}
+
+a {
+  color: #555;
+  text-decoration: none;
+}
+
+// ログイン後 PC Nav
+.a_nav.pc-only {
+  margin-left: auto;
+
+  .a_nav_main {
+    display: flex;
+
+    .el-input {
+      width: 160px;
+      margin-right: 16px;
+
+      /deep/ .el-input__inner {
+        border-radius: 50px;
+      }
+    }
+
+    .w-route_group {
+      margin-right: 16px;
+
+      a {
+        font-size: 24px;
+        color: #fff;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+
+        &:first-child {
+          margin-right: 8px;
+        }
+      }
+    }
+
+    img {
+      width: 40px;
+      height: 40px;
+    }
+
+    .arrow-main {
+      position: relative;
+      bottom: 14px;
+      color: #fff;
+      font-size: 16px;
+    }
+  }
+}
+
+// ログイン後 Mobile Nav 
+.a_nav.tablet-only {
+  margin-left: auto;
+
+  .a_nav_main {
+    display: flex;
+
+    .b-search {
+      width: 160px;
+      margin-right: 20px;
+
+      .el-input {
+        /deep/ .el-input__inner {
+          border-radius: 50px;
+        }
+      }
+    }
+
+    img {
+      width: 40px;
+      height: 40px;
+    }
+
+    .arrow-main {
+      position: relative;
+      bottom: 14px;
+      color: #fff;
+      font-size: 16px;
+    }
+
+  }
+}
+.w-actionBtn.tablet-only {
+  padding: 8px 0;
+  border-top: 1px solid #fff;
+
+  .w-action_container {
+    display: flex;
+    justify-content: center;
+  }
+
+  a {
+    display: inline-block;
+    max-width: 320px;
+    width: 46%;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid #42b983;
+    border-radius: 50px;
+  }
+  .btn-item {
+    color: #42b983;
+    background: #fff;
+    margin-right: 8px;
+  }
+
+  .btn-present {
+    color: #fff;
+    background: #42b983;
+  }
+
+}
+
+/*
+|--------------------------------------------
+|
+|--------------------------------------------
+*/
+// ログイン前 PC nav
+.b_nav.pc-only {
+  width: 100%;
+
+  .b_nav_main {
+    display: flex;
+  }
+
+  .el-input {
+    width: 160px;
+    margin-left: auto;
+    margin-right: 16px;
+
+    /deep/ .el-input__inner {
+      border-radius: 50px;
+    }
+  }
+
+  .el-button {
+    background: transparent;
+    border: none;
+    color: #777;
+
+    &:hover {
+      color: #777;
+      text-decoration: underline;
+    }
+
+    span {
+      color: #555;
+    }
+  }
+}
+// ログイン前 mobile Nav
+.b_nav.tablet-only {
+  width: 100%;
+
+  .el-input {
+    /deep/ .el-input__inner {
+      border-radius: 50px;
+    }
+  }
+}
+.w-actionBtn.tablet-only {
+  padding: 8px 0; 
+
+  .w-action_container {
+    display: flex;
+    justify-content: center;
+  }
+
+  a {
+    display: inline-block;
+    max-width: 320px;
+    width: 46%;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid #42b983;
+    border-radius: 50px;
+  }
+
+  .btn-signin {
+    color: #42b983;
+    background: #fff;
+    margin-right: 8px;
+  }
+
+  .btn-signup {
+    color: #fff;
+    background: #42b983;
+  }
+}
+/*
+|------------------------------------
+| util
+|------------------------------------
+*/
+.pc-only {}
+.tablet-only { display: none; }
+/*
+|------------------------------------
+| media query
+|------------------------------------
+*/
+@media only screen and (max-width: 767px) {
+  .pc-only { display: none; }
+  .tablet-only { display: block; }
+}
+@media only screen and (max-width: 479px) {
+}

@@ -1,0 +1,173 @@
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 48px 20px 80px;
+}
+.main {
+  width: 640px;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 0 8px 0 rgba(127, 127, 12, 0.2);
+}
+.title {
+  display: flex;
+  justify-content: center;
+
+  h3 {
+    font-size: 22px;
+    color: #555;
+  }
+
+}
+/*
+|------------------------------------
+| form
+|------------------------------------
+*/
+.form {
+  padding: 0 20px 26px;
+}
+.w-field {
+  margin-bottom: 26px;
+
+  label {
+    color: #555;
+    font-size: 16px;
+  }
+
+  .el-input {
+    /deep/ .el-input__inner {
+      font-size: 16px;
+      color: #555;
+      border: 1px solid #ccc;
+
+      &:hover {
+        border-color: #42b983;
+      }
+    }
+  }
+
+}
+
+.w-field_row {
+  display: flex;
+  margin-bottom: 26px;
+
+  label {
+    font-size: 16px;
+    color: #555;
+  }
+
+  .w-field-col {
+    &:first-child {
+      margin-right: 16px;
+    }
+
+    .el-input {
+      width: 292px;
+      /deep/ .el-input__inner {
+        border: 1px solid #ccc;
+        font-size: 16px;
+        color: #555;
+
+        &:hover {
+          border-color: #42b983;
+        }
+      }
+    }
+  }
+}
+
+.w-field-gender {
+  margin-bottom: 26px;
+
+  label {
+    font-size: 16px;
+    color: #555;
+  }
+
+  .w-field_main {
+    /deep/ .el-radio__inner {
+      width: 16px;
+      height: 16px;
+    }
+    /deep/ .el-radio__label {
+      font-size: 16px;
+      color: #555
+    }
+    /deep/ .el-radio__input.is-checked+.el-radio__label {     
+      color: #ffbf7f;
+   }
+   /deep/ .el-radio__input.is-checked .el-radio__inner {
+     background: #ffbf7f;
+     border-color: #ffbf7f;
+   }
+  }
+}
+
+.actionBtn {
+  display: flex;
+  justify-content: center;
+
+  .el-input {
+    /deep/ .el-input__inner {
+      background: #42b983;
+      color: #fff;
+      font-weight: bold;
+      font-size: 16px;
+    }
+  }
+}
+/*
+|-----------------------------------
+| misc
+|-----------------------------------
+*/
+.toResetPasswd {
+  padding: 0 20px 32px;
+
+  a {
+    color: #555;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+/*
+|------------------------------------
+| util
+|------------------------------------
+*/
+.tablet-only { display: none; }
+.form_error {
+  color: #ff3300;
+  font-size: 14px;
+}
+/*
+|------------------------------------
+| media query
+|------------------------------------
+*/
+@media only screen and (max-width: 767px) {
+  .pc-only { display: none; }
+  .tablet-only { display: block; }
+  .main { width: 100%; }
+  .w-field_row {
+    display: block;
+
+    .w-field-col {
+      &:first-child {
+        margin-right: 0;
+        margin-bottom: 26px;
+      }
+
+      .el-input {
+        width: 100%;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 479px) {
+}

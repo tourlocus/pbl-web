@@ -1,0 +1,196 @@
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 48px 20px 80px;
+}
+.main {
+  width: 640px;
+  padding: 32px 20px;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 0 8px 0 rgba(127, 127, 12, 0.2);
+}
+/*
+|----------------
+| tag
+|----------------
+*/
+.w-field_tag {
+  label {
+    font-size: 16px;
+    color: #555;
+
+    span {
+      font-size: 14px;
+    }
+  }
+
+  .vue-tags-input {
+    max-width: none;
+    
+    /deep/ .ti-input {
+      border-radius: 4px;
+    } 
+  }
+}
+
+
+/*
+|-----------------------
+| タイトル
+|----------------------
+*/
+.w-field {
+  margin: 24px 0;
+
+  label {
+    font-size: 16px;
+    color: #555;
+  }
+
+  .el-input {
+    /deep/ .el-input__inner {
+      font-size: 16px;
+      color: #555;
+      border: 1px solid #ccc;
+
+      &:hover {
+        border-color: #42b983;
+      }
+    }
+  }
+}
+
+
+/*
+|----------------------------
+| ファイル
+|---------------------------
+*/
+.w-field_file {
+  .w_file {
+    display: inline-block;
+    border: 2px solid #ffbf7f;
+    padding: 8px 12px;
+    color: #555;
+    font-size: 16px;
+    border-radius: 4px;
+
+    &:hover {
+      background: #ffbf7f;
+      color: #fff;
+    }
+  }
+
+  input {
+    display: none;
+  }
+
+  .w-carousel {
+    margin-top: 26px;
+  }
+
+  /deep/ .el-carousel {
+    text-align: center;
+
+    img {
+      width: auto;
+      height: 300px;
+    }
+  }
+
+  /deep/ .el-carousel__container {
+    height: 300px;
+  }
+}
+
+/*
+|------------------------------------
+| 本文
+|------------------------------------
+*/
+.w-field_body {
+  margin: 26px 0;
+  
+  label {
+    font-size: 16px;
+    color: #555;
+  }
+
+  .el-textarea {
+    /deep/ .el-textarea__inner {
+      height: 25vh;
+      font-size: 16px;
+      resize: none;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      color: #555;
+
+      &:hover {
+        border-color: #42b983;
+      }
+    }
+  }
+}
+/*
+|------------------------------------
+| サブミット
+|------------------------------------
+*/
+.w-actionBtn {
+  display: flex;
+  justify-content: center;
+
+  .el-input {
+    /deep/ .el-input__inner {
+      background: #42b983;
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+    }
+  }
+}
+/*
+|------------------------------------
+| util
+|------------------------------------
+*/
+.tablet-only { display: none; }
+.form_error {
+  color: #ff3300;
+  font-size: 14px;
+}
+.not-page {
+  display: flex;
+  justify-content: center;
+
+  h1 {
+    color: #555;
+    font-size: 24px;
+  }
+}
+/*
+|------------------------------------
+| media query
+|------------------------------------
+*/
+@media only screen and (max-width: 767px) {
+  .pc-only { display: none; }
+  .tablet-only { display: block; }
+  .main { width: 100%; }
+}
+@media only screen and (max-width: 479px) {
+  .w-field_file {
+    /deep/ .el-carousel {
+      img {
+        width: 100%;
+        height: 200px;
+      }
+    }
+    /deep/ .el-carousel__container {
+      height: 200px;
+    }
+  }
+
+}
+
