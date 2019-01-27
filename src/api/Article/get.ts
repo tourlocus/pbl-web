@@ -29,11 +29,12 @@ export async function getArticle(cred, id) {
 
 
 // 詳細画面
-export async function getDetailArticle(name, id) {
+export async function getDetailArticle(name, id, current) {
   try {
     const response = await axios({
       url: `${endpoint}/${resource}/${name}/${id}`,
       method: 'GET',
+      params: { current },
     });
 
     if (response.status === 200) {

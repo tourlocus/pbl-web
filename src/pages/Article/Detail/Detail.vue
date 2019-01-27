@@ -37,14 +37,14 @@
                 <template v-else>
                   <!-- お気に入り状態 -->
                   <template v-if="articles.article.status">
-                    <span class="favorite">
+                    <span class="favorite" @click="deleteFavorite">
                       <i class="fas fa-heart" />
                     </span>
                   </template>
 
                   <!-- 非お気に入り -->
                   <template v-else>
-                    <span class="dislike">
+                    <span class="dislike" @click="postFavorite">
                       <i class="fas fa-heart" />
                     </span>
                   </template>
@@ -104,8 +104,37 @@
                 autosize
               />
             </div>
-
           </div>
+
+            <!-- お土産 -->
+            <template v-if="articles.presents.length > 0">
+              <div class="w-main-present">
+              <p class="w-subject">{{articles.article.userName}}のお土産リスト</p>
+              <ElCarousel
+                class="w-presents"
+                :interval="15000"
+                type="card"
+              >
+                <ElCarouselItem v-for="(item, i) in articles.presents" :key="i">
+                  <div 
+                    class="w-card"
+                    @click.prevent="toPresentDetail(`/presents/${articles.article.userName}/${item.id}`)"
+                  >
+                    <div class="w-target">
+                      <span> {{ item.target }} </span>
+                    </div>
+                    <img :src="`${item.image}`" />
+                    <div class="w-label">
+                      <span>商品名</span>
+                    </div>
+                    <div class="w-card-title">{{item.name}}</div>
+                  </div>
+                </ElCarouselItem>
+              </ElCarousel>
+              </div>
+            </template>
+
+          <!-- </div> -->
 
         </div>
       </template>

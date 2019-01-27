@@ -1,4 +1,4 @@
-import {articleApi} from '@/api';
+import {articleApi, favoriteApi} from '@/api';
 
 async function getArticle({commit}, {cred, id}) {
   try {
@@ -9,9 +9,9 @@ async function getArticle({commit}, {cred, id}) {
   }
 }
 
-async function getDetailArticle({commit}, {name, id}) {
+async function getDetailArticle({commit}, {name, id, current}) {
   try {
-    const data = await articleApi.getDetailArticle(name, id);
+    const data = await articleApi.getDetailArticle(name, id, current);
     commit('getDetailArticle', data);
   } catch (error) {
     throw error;
@@ -36,10 +36,32 @@ async function getSearchArticle({commit}, word) {
   }
 }
 
+async function postFavorites({commit}, {cred, id}) {
+  try {
+    await favoriteApi.postFavorites(cred, id);
+
+    commit('postFavorites');
+  } catch (error) {
+    throw error;
+  }
+}
+
+async function deleteFavorites({commit}, {cred, id}) {
+  try {
+    await favoriteApi.deleteFavorites(cred, id);
+
+    commit('deleteFavorites');
+  } catch (error) {
+    throw error;
+  }
+}
+
 export const actions = {
   getArticle,
   getDetailArticle,
   getIndexArticle,
   getSearchArticle,
+  postFavorites,
+  deleteFavorites,
 };
 

@@ -1,10 +1,17 @@
 <template>
   <div class="c-ItemCard">
     <ElCard>
-      <img
-        class="card-image" 
-        :src="`http://localhost:3000/uploads/${media}`" 
-      />
+      <template v-if="media">
+        <img
+          class="card-image" 
+          :src="`http://localhost:3000/uploads/${media}`" 
+        />
+      </template>
+      <template v-else>
+        <img class="card-image"
+          src="../../assets/no_image.svg"
+        />
+      </template>
       <!-- カードボディ -->
       <div class="card-body">
 

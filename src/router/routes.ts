@@ -72,6 +72,12 @@ const routes = [
   },
 
   {
+    path: '/presents/:name/:id',
+    name: 'PresentsDetail',
+    component: Present.Detail,
+  },
+
+  {
     path: '*',
     name: 'NotFound',
     component: NotFound,

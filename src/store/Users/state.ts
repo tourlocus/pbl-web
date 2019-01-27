@@ -1,4 +1,5 @@
 const state = {
+  id: null,
   icon: null,
   name: null,
   profile: {},
