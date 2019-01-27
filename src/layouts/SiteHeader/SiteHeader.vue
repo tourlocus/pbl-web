@@ -97,6 +97,37 @@
                 アカウントをお持ちの場合 <span>ログイン</span>
                 <i class="el-icon-arrow-down el-icon--right" />
               </ElButton>
+              <div class="w-account">
+                <p>アカウントをお持ちの場合</p>
+                <form @submit.prevent="handleSubmit">
+                  <div class="w-field">
+                    <ElInput 
+                      type="email"
+                      v-model.trim="form.email"
+                      placeholder="メールアドレス" 
+                    />
+                  </div>
+                  <div class="w-field">
+                    <ElInput
+                      type="password"
+                      minlength="8"
+                      v-model.trim="form.password"
+                      placeholder="パスワード" 
+                    />
+                  </div>
+                  <div class="accountSubmit">
+                    <ElInput type="submit" value="ログイン" />
+                  </div>
+                </form>
+
+                <div class="w-newAccount">
+                  <ElButton
+                    @click="toSignup"
+                  >
+                    アカウント作成
+                  </ElButton>
+                </div>
+              </div>
             </ElPopover>
           </div>
         </div>
@@ -154,7 +185,13 @@ export default {
   components: {Logo},
   props: ['auth', 'user'],
   data() {
-    return { word: '' };
+    return {
+       word: '',
+       form: {
+         email: '',
+         password: '',
+       },
+    };
   },
   watch: {
     word(value) {
@@ -162,7 +199,7 @@ export default {
     },
   },
   methods: {
-    ...mapActions('auth', ['deleteSignOut']),
+    ...mapActions('auth', ['deleteSignOut', 'postSignIn']),
     ...mapActions('articles', ['getSearchArticle']),
     async logout() {
       try {
@@ -177,6 +214,20 @@ export default {
         this.getSearchArticle(this.word);
         this.word = '';
       }
+    },
+
+    async handleSubmit() {
+      try {
+        await this.postSignIn(this.form);
+        this.form = {email: '', password: ''};
+      } catch (error) {
+        this.$message('ログインに失敗しました');
+        throw error;
+      }
+    },
+
+    toSignup() {
+      this.$router.push('/signup');
     },
   },
 };

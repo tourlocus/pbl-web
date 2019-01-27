@@ -10,7 +10,20 @@ async function getUserAritlce({commit}, name) {
   commit('getUserAritlce', data);
 }
 
+async function deleteUser({commit}) {
+  const newState = {
+    id: null,
+    icon: null,
+    name: null,
+    profile: Object.create(null),
+    items: [],
+    favorites: [],
+  };
+  commit('deleteUser', newState);
+}
+
 export const actions = {
   setUserInfomation,
   getUserAritlce,
+  deleteUser,
 };

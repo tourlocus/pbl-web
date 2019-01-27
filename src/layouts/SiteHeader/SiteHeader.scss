@@ -12,6 +12,37 @@ a {
   text-decoration: none;
 }
 
+.w-account {
+  width: 240px;
+
+  .w-field {
+    margin-bottom: 8px;
+  }
+
+  .accountSubmit {
+    padding-bottom: 12px;
+    border-bottom: 1px solid #ccc;
+
+    /deep/ .el-input__inner {
+      border-radius: 16px;
+      background: #42b983;
+      color: #fff;
+      font-size: 16px;
+    }
+  }
+
+  .w-newAccount {
+    padding-top: 12px;
+    /deep/ .el-button {
+      width: 100%;
+      border-radius: 16px;
+      color: #42b983;
+      font-size: 16px;
+      border-color: #42b983;
+    }
+  }
+}
+
 // ログイン後 PC Nav
 .a_nav.pc-only {
   margin-left: auto;

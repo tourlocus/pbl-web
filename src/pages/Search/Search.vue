@@ -5,7 +5,7 @@
       <div class="main">
         <template v-if="articles.search.length === 0">
           <div class="not-page">
-            
+            <h3>記事が存在しません</h3>
           </div>
         </template>
         <template v-else>

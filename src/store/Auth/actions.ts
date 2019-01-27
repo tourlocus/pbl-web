@@ -20,9 +20,9 @@ async function postSignUp({dispatch, commit}, values) {
   }
 }
 
-async function deleteSignOut({commit}, values) {
-  console.log(values);
+async function deleteSignOut({dispatch, commit}, values) {
   await authApi.deleteSignOut(values);
+  await dispatch('users/deleteUser', null, {root: true});
   commit('logout');
   router.push('/');
 }

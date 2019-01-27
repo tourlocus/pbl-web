@@ -19,9 +19,19 @@ function getSearchArticles(state, payload) {
   Object.assign(state, payload);
 }
 
+function postFavorites(state) {
+  state.article.status = true;
+}
+
+function deleteFavorites(state) {
+  state.article.status = false;
+}
+
 export const mutations = {
   getArticle,
   getDetailArticle,
   getIndexArticles,
   getSearchArticles,
+  postFavorites,
+  deleteFavorites,
 };

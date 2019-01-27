@@ -31,6 +31,36 @@ export function getConverterEditPresent(payload) {
   return {
     articleIdList: list,
     present: {
+      id: present.id,
+      articleId: present.curent_article_id,
+      file: targetImage,
+      name: present.name,
+      kind: present.kind,
+      otherKind: present.other_kind,
+      target: present.target,
+      otherTarget: present.other_target,
+      price: present.price,
+      content: present.content,
+    },
+  };
+}
+
+export function getConvertDetailPresent(payload) {
+  const {articleIdList, present} = payload;
+
+  const currentID = articleIdList.filter(article => {
+    return article.id === present.curent_article_id;
+  });
+
+  const targetImage = `${endpoint}${present.file}`;
+
+  return {
+    articleIdList: {
+      label: currentID[0].title,
+      value: currentID[0].id,
+    },
+    present: {
+      id: present.id,
       articleId: present.curent_article_id,
       file: targetImage,
       name: present.name,

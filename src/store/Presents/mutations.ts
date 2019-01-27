@@ -1,4 +1,4 @@
-import {getConvertCreatePresent, getConverterEditPresent} from './converter';
+import {getConvertCreatePresent, getConverterEditPresent, getConvertDetailPresent} from './converter';
 
 function getCreatePresent(state, payload) {
   const result = getConvertCreatePresent(payload);
@@ -10,7 +10,13 @@ function getEditPresent(state, payload) {
   Object.assign(state, result);
 }
 
+function getDetailPresent(state, payload) {
+  const result = getConvertDetailPresent(payload);
+  Object.assign(state, result);
+}
+
 export const mutations = {
   getCreatePresent,
   getEditPresent,
+  getDetailPresent,
 };

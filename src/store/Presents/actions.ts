@@ -20,7 +20,18 @@ async function getEditPresent({commit}, {cred, id}) {
   }
 }
 
+async function getDetailPresent({commit}, {name, id}) {
+  try {
+    const data = await presentApi.getDetailPresent(name, id);
+
+    commit('getDetailPresent', data);
+  } catch (error) {
+    throw error;
+  }
+}
+
 export const actions = {
   getCreatePresent,
   getEditPresent,
+  getDetailPresent,
 };

@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Component from 'vue-class-component';
 import {State, Action} from 'vuex-class';
 import {kind, target} from '@/utils';
+import {presentApi} from '@/api';
 
 
 @Component({})
@@ -60,6 +61,8 @@ class Enhancer extends Vue {
       if (result) {
         try {
           this.updateIsLoading(true);
+          await presentApi.putPresent(this.auth, this.form, id);
+          this.$router.push(`/${this.users.name}`);
         } catch (error) {
           this.$message('お土産の更新に失敗しました');
           this.updateIsLoading(false);

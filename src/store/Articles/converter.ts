@@ -1,4 +1,5 @@
 const uploadURL = 'http://localhost:3000/uploads';
+const endpoint = process.env.VUE_APP_ENDPOINT;
 
 // 記事編集
 export function getConvertArticle(payload) {
@@ -36,6 +37,7 @@ export function getConvertDetailArticle(payload) {
     status,
     mediaFiles,
     comment,
+    presents,
     userIcon,
     userName,
     created_at,
@@ -48,15 +50,29 @@ export function getConvertDetailArticle(payload) {
     const target = `${uploadURL}/${mediaFiles[i].url}`;
     media.push(target);
   }
-
   const tag = [];
   // tslint:disable-next-line
   for (let i = 0; i < tags.length; i++) {
     const tagName = tags[i].name;
     tag.push(tagName);
   }
-
   const icon = `${uploadURL}/${userIcon}`;
+
+  const presentList = [];
+  // tslint:disable-next-line
+  for (let i = 0; i < presents.length; i++) {
+    presentList.push({
+      id: presents[i].id,
+      name: presents[i].name,
+      image: `${endpoint}/${presents[i].image}`,
+      kind: presents[i].kind,
+      otherKind: presents[i].other_kind,
+      target: presents[i].target,
+      otherTarget: presents[i].other_target,
+      price: presents[i].price,
+      content: presents[i].content,
+    });
+  }
 
   return {
     article: {
@@ -71,5 +87,6 @@ export function getConvertDetailArticle(payload) {
       createdAt: created_at,
       updatedAt: updated_at,
     },
+    presents: presentList,
   };
 }

@@ -1,7 +1,7 @@
 import {postArticles} from './post';
 import {
-  getArticle, 
-  getDetailArticle, 
+  getArticle,
+  getDetailArticle,
   getIndexArticles,
   getSearchArticles,
 } from './get';
