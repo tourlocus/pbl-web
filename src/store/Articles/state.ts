@@ -4,6 +4,7 @@ const state = {
   article: {},      // 記事詳細, 記事編集
   presents: [],
   search: [],       // 検索
+  season: [],       // 季節
   my_items: [],       // ユーザーの記事
   my_favorites: [],   // ユーザのお気に入り
 };

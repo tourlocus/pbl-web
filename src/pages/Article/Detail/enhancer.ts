@@ -40,7 +40,7 @@ class Enhancer extends Vue {
 
   async deleteFavorite() {
     const {id} = this.$route.params;
-    await this.deleteFavorites({cred: this.auth, id})
+    await this.deleteFavorites({cred: this.auth, id});
   }
 
   async created() {

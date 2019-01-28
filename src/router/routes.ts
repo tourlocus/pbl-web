@@ -6,6 +6,7 @@ import {
   User,
   Article,
   Present,
+  Season,
   NotFound,
 } from '@/pages';
 
@@ -33,6 +34,12 @@ const routes = [
     name: 'Search',
     component: Search,
     props: (route) => ({query: route.query.q}),
+  },
+
+  {
+    path: '/season',
+    name: 'Season',
+    component: Season,
   },
 
   {

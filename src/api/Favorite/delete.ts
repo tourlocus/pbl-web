@@ -12,7 +12,7 @@ export async function deleteFavorites(cred, id) {
         'client': cred.client,
         'uid': cred.uid,
         'access-token': cred.accessToken,
-      }
+      },
     });
 
     if (response.status === 200) {

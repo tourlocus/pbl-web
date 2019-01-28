@@ -56,6 +56,16 @@ async function deleteFavorites({commit}, {cred, id}) {
   }
 }
 
+async function getSeasonArticles({commit}, {i, j, k}) {
+  try {
+    const data = await articleApi.getSeasonArticles(i, j, k);
+
+    commit('getSeasonArticles', data);
+  } catch (error) {
+    throw error;
+  }
+}
+
 export const actions = {
   getArticle,
   getDetailArticle,
@@ -63,5 +73,6 @@ export const actions = {
   getSearchArticle,
   postFavorites,
   deleteFavorites,
+  getSeasonArticles,
 };
 

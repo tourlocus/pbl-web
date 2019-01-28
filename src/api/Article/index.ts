@@ -4,6 +4,7 @@ import {
   getDetailArticle,
   getIndexArticles,
   getSearchArticles,
+  getSeasonArticles,
 } from './get';
 import {putArticle} from './put';
 
@@ -14,4 +15,5 @@ export const articleApi = {
   getDetailArticle,
   getSearchArticles,
   putArticle,
+  getSeasonArticles,
 };

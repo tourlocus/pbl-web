@@ -1,13 +1,16 @@
 <template>
   <div class="p-Search">
-
+    
     <div class="container">
       <div class="main">
+        <RouterLink to="/season" class="w-season">季節ごとに検索する</RouterLink>
+
         <template v-if="articles.search.length === 0">
           <div class="not-page">
             <h3>記事が存在しません</h3>
           </div>
         </template>
+
         <template v-else>
           <div
             v-for="(item, i) in articles.search"

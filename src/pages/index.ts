@@ -6,4 +6,5 @@ export {Search} from './Search';
 export {User} from './User';
 export {Article} from './Article';
 export {Present} from './Present';
+export {Season} from './Season';
 export {NotFound} from './NotFound';

@@ -27,6 +27,10 @@ function deleteFavorites(state) {
   state.article.status = false;
 }
 
+function getSeasonArticles(state, payload) {
+  Object.assign(state, payload);
+}
+
 export const mutations = {
   getArticle,
   getDetailArticle,
@@ -34,4 +38,5 @@ export const mutations = {
   getSearchArticles,
   postFavorites,
   deleteFavorites,
+  getSeasonArticles,
 };
